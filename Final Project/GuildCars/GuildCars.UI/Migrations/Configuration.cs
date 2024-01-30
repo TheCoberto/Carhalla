@@ -4,7 +4,10 @@ namespace GuildCars.UI.Migrations
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System.Data.Entity.Migrations;
+    using System.Data.Entity.Validation;
+    using System.Diagnostics;
     using System.Linq;
+    using System.Runtime.CompilerServices;
 
     internal sealed class Configuration : DbMigrationsConfiguration<GuildCars.UI.Models.ApplicationDbContext>
     {
@@ -28,7 +31,7 @@ namespace GuildCars.UI.Migrations
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "Admin", FirstName = "Charles", LastName = "Carper", Email = "Charles.Carper@GuildCars.com", UserRole = "Admin" };
+                var user = new ApplicationUser { UserName = "Admin", FirstName="The", LastName = "Administrator", Email="admin3@testy.test", UserRole = "Admin" };
 
                 manager.Create(user, "testing123!");
                 manager.AddToRole(user.Id, "Admin");
@@ -47,7 +50,7 @@ namespace GuildCars.UI.Migrations
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "Sales", FirstName = "Barb", LastName = "Wire", Email = "barb@test.test", UserRole = "Sales" };
+                var user = new ApplicationUser { UserName = "Sales", FirstName = "Barb", LastName = "Wire", Email ="barb@test.test", UserRole = "Sales" };
 
                 manager.Create(user, "testing123!");
                 manager.AddToRole(user.Id, "Sales");
@@ -55,3 +58,4 @@ namespace GuildCars.UI.Migrations
         }
     }
 }
+

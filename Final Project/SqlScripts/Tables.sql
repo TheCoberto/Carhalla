@@ -1,4 +1,4 @@
-USE GuildCars
+USE Carhalla
 GO
 
 IF EXISTS(SELECT * FROM sys.tables WHERE name='Make')

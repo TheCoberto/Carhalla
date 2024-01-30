@@ -29,7 +29,7 @@ namespace GuildCars.Data.Repositories.ADO
                         {
                             Make Make = new Make();
 
-                            Make.MakeId = dr["MakeId"].ToString();
+                            Make.MakeId = (int)dr["MakeId"];
                             Make.MakeName = dr["MakeName"].ToString();
                             Make.DateAdded = (DateTime)dr["DateAdded"];
                             Make.AddedBy = dr["AddedBy"].ToString();
@@ -59,7 +59,7 @@ namespace GuildCars.Data.Repositories.ADO
             }
         }
 
-        public Make GetMakeById(string MakeId)
+        public Make GetMakeById(int MakeId)
         {
             Make make = null;
 
@@ -81,7 +81,7 @@ namespace GuildCars.Data.Repositories.ADO
                         if (dr.Read())
                         {
                             make = new Make();
-                            make.MakeId = dr["MakeId"].ToString();
+                            make.MakeId = (int)dr["MakeId"];
                             make.MakeName = dr["MakeName"].ToString();
                             make.DateAdded = (DateTime)dr["DateAdded"];
                             make.AddedBy = dr["AddedBy"].ToString();
@@ -128,13 +128,13 @@ namespace GuildCars.Data.Repositories.ADO
                     cmd.Parameters.AddWithValue("@MakeName", Make.MakeName);
                     cmd.Parameters.AddWithValue("@DateAdded", Make.DateAdded = DateTime.Now.Date);
                     cmd.Parameters.AddWithValue("@AddedBy", Make.AddedBy);
-                    
+
 
                     dbConnection.Open();
 
                     cmd.ExecuteNonQuery();
 
-                    Make.MakeId = param.Value.ToString();
+                    Make.MakeId = (int)param.Value;
                 }
                 catch (Exception ex)
                 {

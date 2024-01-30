@@ -6,7 +6,7 @@ namespace GuildCars.Data.Interfaces
     public interface IMakeRepository
     {
         IEnumerable<Make> GetAll();
-        Make GetMakeById(string MakeId);
+        Make GetMakeById(int MakeId);
         void Insert(Make make);
     }
 }

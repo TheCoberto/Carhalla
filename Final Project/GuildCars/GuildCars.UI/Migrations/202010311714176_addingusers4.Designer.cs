@@ -7,13 +7,13 @@ namespace GuildCars.UI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class test : IMigrationMetadata
+    public sealed partial class addingusers4 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(test));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addingusers4));
         
         string IMigrationMetadata.Id
         {
-            get { return "202008231554574_test"; }
+            get { return "201710311714176_addingusers4"; }
         }
         
         string IMigrationMetadata.Source

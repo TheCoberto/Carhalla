@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using GuildCars.Models.Tables;
+using System.Runtime.InteropServices;
 
 namespace GuildCars.Data.Repositories.Mock
 {
@@ -12,7 +13,7 @@ namespace GuildCars.Data.Repositories.Mock
 
         private static Make Toyota = new Make
         {
-            MakeId = "1",
+            MakeId = 1,
             MakeName = "Toyota",
             DateAdded = new DateTime(2017, 7, 19),
             AddedBy = "admin3@test.com"
@@ -20,7 +21,7 @@ namespace GuildCars.Data.Repositories.Mock
 
         private static Make Acura = new Make
         {
-            MakeId = "2",
+            MakeId = 2,
             MakeName = "Acura",
             DateAdded = new DateTime(2017, 7, 2),
             AddedBy = "admin3@test.com"
@@ -29,7 +30,7 @@ namespace GuildCars.Data.Repositories.Mock
 
         private static Make Ford = new Make
         {
-            MakeId = "3",
+            MakeId = 3,
             MakeName = "Ford",
             DateAdded = new DateTime(2015, 6, 2),
             AddedBy = "admin3@test.com"
@@ -38,7 +39,7 @@ namespace GuildCars.Data.Repositories.Mock
 
         private static Make Dodge = new Make
         {
-            MakeId = "4",
+            MakeId = 4,
             MakeName = "Dodge",
             DateAdded = new DateTime(2009, 5, 1),
             AddedBy = "admin3@test.com"
@@ -47,7 +48,7 @@ namespace GuildCars.Data.Repositories.Mock
 
         private static Make Mock = new Make
         {
-            MakeId = "5",
+            MakeId = 5,
             MakeName = "Mock",
             DateAdded = new DateTime(2009, 5, 1),
             AddedBy = "admin3@test.com"
@@ -76,18 +77,14 @@ namespace GuildCars.Data.Repositories.Mock
             return _makes;
         }
 
-        public Make GetMakeById(string MakeId)
+        public Make GetMakeById(int MakeId)
         {
             return _makes.FirstOrDefault(m => m.MakeId == MakeId);
         }
 
         public void Insert(Make make)
         {
-            var id = _makes.Max(m => m.MakeId);
-
-            if(int.TryParse(id, out int result)){
-                make.MakeId = (result + 1).ToString();
-            };
+            make.MakeId = _makes.Max(m => make.MakeId) + 1;
 
             _makes.Add(make);
         }
