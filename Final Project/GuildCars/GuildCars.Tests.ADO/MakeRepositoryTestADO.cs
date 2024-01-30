@@ -71,7 +71,7 @@ namespace GuildCars.Tests.MakeRepositoryTests
         {
             MakeRepositoryADO repo = new MakeRepositoryADO();
 
-            Make Make = repo.GetAll().FirstOrDefault(c => c.MakeId == 3.ToString());
+            Make Make = repo.GetAll().FirstOrDefault(c => c.MakeId == 3);
 
             Assert.AreEqual(Make.MakeId, 3.ToString());
             Assert.AreEqual(Make.MakeName, "Ford");
