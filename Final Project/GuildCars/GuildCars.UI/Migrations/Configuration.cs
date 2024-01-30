@@ -13,7 +13,7 @@ namespace GuildCars.UI.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(GuildCars.UI.Models.ApplicationDbContext context)
