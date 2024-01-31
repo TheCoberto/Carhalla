@@ -645,7 +645,7 @@ namespace GuildCars.Data.Repositories.ADO
                 string query = "SELECT TOP 20 c.CarId AS \"CarId\", c.IsSold As \"Sold\", c.ModelYear AS \"ModelYear\", bs.BodyStyleType As \"BodyStyle\", mk.MakeName AS \"Make\",  md.ModelName AS \"Model\", c.IMGFilePath AS \"IMGURL\"," +
                                "ic.ColorName AS \"InteriorColor\", bc.ColorName AS \"BodyColor\", t.TransmissionType AS \"Transmission\","
                                + "c.Mileage AS \"Mileage\", c.VIN AS \"VIN\", c.SalePrice AS \"SalePrice\", c.MSRP AS \"MSRP\"" +
-                               "FROM Cars c INNER JOIN Make mk ON mk.MakeId = c.MakeId INNER JOIN BodyStyle bs ON bs.BodyStyleId = c.BodyStyleId INNER JOIN Model md ON md.ModelId = c.MakeId INNER JOIN " +
+                               "FROM Cars c INNER JOIN Make mk ON mk.MakeId = c.MakeId INNER JOIN BodyStyle bs ON bs.BodyStyleId = c.BodyStyleId INNER JOIN Model md ON md.ModelId = c.ModelId INNER JOIN " +
                                "Color bc ON c.BodyColorId = bc.ColorId INNER JOIN Color ic ON ic.ColorId = c.InteriorColorId  INNER JOIN " +
                                "Transmission t ON t.TransmissionId = c.TransmissionId WHERE 1 = 1 AND c.IsSold = 0 ";
 
