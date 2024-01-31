@@ -102,11 +102,11 @@ namespace GuildCars.Tests
 
             Assert.AreEqual("2ABC2ABC2ABC2ABC2", car.VIN);
             Assert.AreEqual(2, car.CarId);
-            Assert.AreEqual(new DateTime(2018, 1, 1), car.ModelYear);
+            Assert.AreEqual(new DateTime(2020, 1, 1), car.ModelYear);
             Assert.IsTrue(car.IsNew);
             Assert.IsFalse(car.IsSold);
             Assert.IsTrue(car.IsFeatured);
-            Assert.AreEqual(5, car.UnitsInStock);
+            Assert.AreEqual(3, car.UnitsInStock);
             Assert.AreEqual("200", car.Mileage);
             Assert.AreEqual(2, car.BodyColorId);
             Assert.AreEqual(2, car.BodyStyleId);
@@ -117,7 +117,7 @@ namespace GuildCars.Tests
             Assert.AreEqual(33000.00m, car.SalePrice);
             Assert.AreEqual(34150.00m, car.MSRP);
             Assert.AreEqual("/Images/2018AcuraTLX.png", car.IMGFilePath);
-            Assert.AreEqual("A silver bullet of power and dependability.", car.VehicleDetails);
+            Assert.AreEqual("Very very very dependable.", car.VehicleDetails);
         }
 
         [Test]
@@ -126,15 +126,15 @@ namespace GuildCars.Tests
             CarsRepositoryADO repo = new CarsRepositoryADO();
             List<Car> cars = repo.GetAllCars().ToList();
 
-            Assert.AreEqual(10, cars.Count);
+            Assert.AreEqual(6, cars.Count);
 
             Assert.AreEqual("2ABC2ABC2ABC2ABC2", cars[1].VIN);
             Assert.AreEqual(2, cars[1].CarId);
-            Assert.AreEqual(new DateTime(2018, 1, 1), cars[1].ModelYear);
+            Assert.AreEqual(new DateTime(2020, 1, 1), cars[1].ModelYear);
             Assert.IsTrue(cars[1].IsNew);
             Assert.IsFalse(cars[1].IsSold);
             Assert.IsTrue(cars[1].IsFeatured);
-            Assert.AreEqual(5, cars[1].UnitsInStock);
+            Assert.AreEqual(3, cars[1].UnitsInStock);
             Assert.AreEqual("200", cars[1].Mileage);
             Assert.AreEqual(2, cars[1].BodyColorId);
             Assert.AreEqual(2, cars[1].BodyStyleId);
@@ -145,7 +145,7 @@ namespace GuildCars.Tests
             Assert.AreEqual(33000.00m, cars[1].SalePrice);
             Assert.AreEqual(34150.00m, cars[1].MSRP);
             Assert.AreEqual("/Images/2018AcuraTLX.png", cars[1].IMGFilePath);
-            Assert.AreEqual("A silver bullet of power and dependability.", cars[1].VehicleDetails);
+            Assert.AreEqual("Very very very dependable.", cars[1].VehicleDetails);
         }
 
         [Test]
@@ -154,10 +154,10 @@ namespace GuildCars.Tests
             CarsRepositoryADO repo = new CarsRepositoryADO();
             List<FeaturedShortListItem> featuredCars = repo.GetAllFeaturedCars().ToList();
 
-            Assert.AreEqual(8, featuredCars.Count);
+            Assert.AreEqual(4, featuredCars.Count);
 
             Assert.AreEqual(2, featuredCars[0].CarId);
-            Assert.AreEqual(new DateTime(2018, 1, 1), featuredCars[0].Year);
+            Assert.AreEqual(new DateTime(2020, 1, 1), featuredCars[0].Year);
             Assert.AreEqual(2, featuredCars[0].MakeId);
             Assert.AreEqual(3, featuredCars[0].ModelId);
             Assert.AreEqual(33000.00m, featuredCars[0].Price);
@@ -172,15 +172,15 @@ namespace GuildCars.Tests
             CarsRepositoryADO repo = new CarsRepositoryADO();
             List<Car> cars = repo.GetAllNewCars().ToList();
 
-            Assert.AreEqual(5, cars.Count);
+            Assert.AreEqual(3, cars.Count);
 
             Assert.AreEqual("2ABC2ABC2ABC2ABC2", cars[1].VIN);
             Assert.AreEqual(2, cars[1].CarId);
-            Assert.AreEqual(new DateTime(2018, 1, 1), cars[1].ModelYear);
+            Assert.AreEqual(new DateTime(2020, 1, 1), cars[1].ModelYear);
             Assert.IsTrue(cars[1].IsNew);
             Assert.IsFalse(cars[1].IsSold);
             Assert.IsTrue(cars[1].IsFeatured);
-            Assert.AreEqual(5, cars[1].UnitsInStock);
+            Assert.AreEqual(3, cars[1].UnitsInStock);
             Assert.AreEqual("200", cars[1].Mileage);
             Assert.AreEqual(2, cars[1].BodyColorId);
             Assert.AreEqual(2, cars[1].BodyStyleId);
@@ -191,7 +191,7 @@ namespace GuildCars.Tests
             Assert.AreEqual(33000.00m, cars[1].SalePrice);
             Assert.AreEqual(34150.00m, cars[1].MSRP);
             Assert.AreEqual("/Images/2018AcuraTLX.png", cars[1].IMGFilePath);
-            Assert.AreEqual("A silver bullet of power and dependability.", cars[1].VehicleDetails);
+            Assert.AreEqual("Very very very dependable.", cars[1].VehicleDetails);
         }
 
         [Test]
@@ -200,7 +200,7 @@ namespace GuildCars.Tests
             CarsRepositoryADO repo = new CarsRepositoryADO();
             List<Car> cars = repo.GetAllUsedCars().ToList();
 
-            Assert.AreEqual(5, cars.Count);
+            Assert.AreEqual(3, cars.Count);
 
             Assert.AreEqual("4ABC4ABC4ABC4ABC4", cars[1].VIN);
             Assert.AreEqual(4, cars[1].CarId);
@@ -219,7 +219,7 @@ namespace GuildCars.Tests
             Assert.AreEqual(4000.00m, cars[1].SalePrice);
             Assert.AreEqual(5000.00m, cars[1].MSRP);
             Assert.AreEqual("/Images/2005DodgeGrandCaravan.jpg", cars[1].IMGFilePath);
-            Assert.AreEqual("Certified and ready to take your family anywhere.", cars[1].VehicleDetails);
+            Assert.AreEqual("Dusty old van.", cars[1].VehicleDetails);
         }
 
         [Test]
@@ -228,7 +228,7 @@ namespace GuildCars.Tests
             CarsRepositoryADO repo = new CarsRepositoryADO();
             List<Car> cars = repo.GetAllUnsoldCars().ToList();
 
-            Assert.AreEqual(8, cars.Count);
+            Assert.AreEqual(4, cars.Count);
 
             Assert.AreEqual("4ABC4ABC4ABC4ABC4", cars[1].VIN);
             Assert.AreEqual(4, cars[1].CarId);
@@ -247,7 +247,7 @@ namespace GuildCars.Tests
             Assert.AreEqual(4000.00m, cars[1].SalePrice);
             Assert.AreEqual(5000.00m, cars[1].MSRP);
             Assert.AreEqual("/Images/2005DodgeGrandCaravan.jpg", cars[1].IMGFilePath);
-            Assert.AreEqual("Certified and ready to take your family anywhere.", cars[1].VehicleDetails);
+            Assert.AreEqual("Dusty old van.", cars[1].VehicleDetails);
         }
 
         [Test]
@@ -306,7 +306,7 @@ namespace GuildCars.Tests
             repo.Insert(car);
 
             List<Car> cars = repo.GetAllCars().ToList();
-            Assert.AreEqual(11, cars.Count);
+            Assert.AreEqual(7, cars.Count);
 
             Assert.AreEqual(11, cars[10].CarId);
             Assert.AreEqual(car.ModelYear, cars[10].ModelYear);
@@ -455,20 +455,20 @@ namespace GuildCars.Tests
 
             List<SearchResultItem> searchCarResults = repo.SearchCars(searchParameters).ToList();
 
-            Assert.AreEqual(5, searchCarResults.Count);
+            Assert.AreEqual(2, searchCarResults.Count);
 
-            Assert.AreEqual(1, searchCarResults[1].CarId);
-            Assert.AreEqual(new DateTime(2017,1,1).Year.ToString(), searchCarResults[1].Year);
-            Assert.AreEqual("Toyota", searchCarResults[1].Make);
-            Assert.AreEqual("Tundra LX", searchCarResults[1].Model);
-            Assert.AreEqual("Black", searchCarResults[1].BodyColor);
-            Assert.AreEqual("Black", searchCarResults[1].InteriorColor);
-            Assert.AreEqual("Automatic", searchCarResults[1].Transmission);
-            Assert.AreEqual("/Images/2017ToyotaTundra1794.jpg", searchCarResults[1].IMGURL);
-            Assert.AreEqual("1ABC1ABC1ABC1ABC1", searchCarResults[1].VIN);
+            Assert.AreEqual(5, searchCarResults[1].CarId);
+            Assert.AreEqual(new DateTime(2020,1,1).Year.ToString(), searchCarResults[1].Year);
+            Assert.AreEqual("Mock", searchCarResults[1].Make);
+            Assert.AreEqual("Vehicle", searchCarResults[1].Model);
+            Assert.AreEqual("Silver", searchCarResults[1].BodyColor);
+            Assert.AreEqual("Gray", searchCarResults[1].InteriorColor);
+            Assert.AreEqual("Manual", searchCarResults[1].Transmission);
+            Assert.AreEqual("/Images/MockNewCarPhoto.png", searchCarResults[1].IMGURL);
+            Assert.AreEqual("5ABC5ABC5ABC5ABC5", searchCarResults[1].VIN);
             Assert.AreEqual("0", searchCarResults[1].Mileage);
-            Assert.AreEqual(50315m, searchCarResults[1].SalePrice);
-            Assert.AreEqual(51815m, searchCarResults[1].MSRP);
+            Assert.AreEqual(10000m, searchCarResults[1].SalePrice);
+            Assert.AreEqual(10000m, searchCarResults[1].MSRP);
         }
 
         [Test]
@@ -521,20 +521,19 @@ namespace GuildCars.Tests
 
             List<SearchResultItem> searchCarResults = repo.SearchCars(searchParameters).ToList();
 
-            Assert.AreEqual(4, searchCarResults.Count);
-
-            Assert.AreEqual(1, searchCarResults[0].CarId);
-            Assert.AreEqual(new DateTime(2017,1,1).Year.ToString(), searchCarResults[0].Year);
-            Assert.AreEqual("Toyota", searchCarResults[0].Make);
-            Assert.AreEqual("Tundra LX", searchCarResults[0].Model);
-            Assert.AreEqual("Black", searchCarResults[0].BodyColor);
-            Assert.AreEqual("Black", searchCarResults[0].InteriorColor);
-            Assert.AreEqual("Automatic", searchCarResults[0].Transmission);
-            Assert.AreEqual("/Images/2017ToyotaTundra1794.jpg", searchCarResults[0].IMGURL);
-            Assert.AreEqual("1ABC1ABC1ABC1ABC1", searchCarResults[0].VIN);
-            Assert.AreEqual("0", searchCarResults[0].Mileage);
-            Assert.AreEqual(50315m, searchCarResults[0].SalePrice);
-            Assert.AreEqual(51815m, searchCarResults[0].MSRP);
+            Assert.AreEqual(2, searchCarResults.Count);
+            Assert.AreEqual(2, searchCarResults[0].CarId);
+            Assert.AreEqual(new DateTime(2020,1,1).Year.ToString(), searchCarResults[0].Year);
+            Assert.AreEqual("Acura", searchCarResults[0].Make);
+            Assert.AreEqual("Escape", searchCarResults[0].Model);
+            Assert.AreEqual("Silver", searchCarResults[0].BodyColor);
+            Assert.AreEqual("Gray", searchCarResults[0].InteriorColor);
+            Assert.AreEqual("Manual", searchCarResults[0].Transmission);
+            Assert.AreEqual("/Images/2018AcuraTLX.png", searchCarResults[0].IMGURL);
+            Assert.AreEqual("2ABC2ABC2ABC2ABC2", searchCarResults[0].VIN);
+            Assert.AreEqual("200", searchCarResults[0].Mileage);
+            Assert.AreEqual(33000m, searchCarResults[0].SalePrice);
+            Assert.AreEqual(34150m, searchCarResults[0].MSRP);
         }
 
         [Test]
@@ -678,20 +677,20 @@ namespace GuildCars.Tests
 
             List<SearchResultItem> searchCarResults = repo.SearchCars(searchParameters).ToList();
 
-            Assert.AreEqual(4, searchCarResults.Count);
+            Assert.AreEqual(1, searchCarResults.Count);
 
-            Assert.AreEqual(3, searchCarResults[1].CarId);
-            Assert.AreEqual(new DateTime(2017,1,1).Year.ToString(), searchCarResults[1].Year);
-            Assert.AreEqual("Ford", searchCarResults[1].Make);
-            Assert.AreEqual("Escape", searchCarResults[1].Model);
-            Assert.AreEqual("White", searchCarResults[1].BodyColor);
-            Assert.AreEqual("White", searchCarResults[1].InteriorColor);
-            Assert.AreEqual("Automatic", searchCarResults[1].Transmission);
-            Assert.AreEqual("/Images/2017FordEscape.png", searchCarResults[1].IMGURL);
-            Assert.AreEqual("3ABC3ABC3ABC3ABC3", searchCarResults[1].VIN);
-            Assert.AreEqual("1200", searchCarResults[1].Mileage);
-            Assert.AreEqual(22669m, searchCarResults[1].SalePrice);
-            Assert.AreEqual(24500m, searchCarResults[1].MSRP);
+            Assert.AreEqual(6, searchCarResults[0].CarId);
+            Assert.AreEqual(new DateTime(2017,1,1).Year.ToString(), searchCarResults[0].Year);
+            Assert.AreEqual("Mock", searchCarResults[0].Make);
+            Assert.AreEqual("Vehicle", searchCarResults[0].Model);
+            Assert.AreEqual("Silver", searchCarResults[0].BodyColor);
+            Assert.AreEqual("Gray", searchCarResults[0].InteriorColor);
+            Assert.AreEqual("Manual", searchCarResults[0].Transmission);
+            Assert.AreEqual("/Images/MockUsedCarPhoto.png", searchCarResults[0].IMGURL);
+            Assert.AreEqual("8ABC8ABC8ABC8ABC8", searchCarResults[0].VIN);
+            Assert.AreEqual("0", searchCarResults[0].Mileage);
+            Assert.AreEqual(40000m, searchCarResults[0].SalePrice);
+            Assert.AreEqual(40000m, searchCarResults[0].MSRP);
         }
 
         [Test]
@@ -711,20 +710,20 @@ namespace GuildCars.Tests
 
             List<SearchResultItem> searchCarResults = repo.SearchCars(searchParameters).ToList();
 
-            Assert.AreEqual(5, searchCarResults.Count);
+            Assert.AreEqual(2, searchCarResults.Count);
 
-            Assert.AreEqual(3, searchCarResults[1].CarId);
-            Assert.AreEqual(new DateTime(2017,1,1).Year.ToString(), searchCarResults[1].Year);
-            Assert.AreEqual("Ford", searchCarResults[1].Make);
-            Assert.AreEqual("Escape", searchCarResults[1].Model);
+            Assert.AreEqual(4, searchCarResults[1].CarId);
+            Assert.AreEqual(new DateTime(2005,1,1).Year.ToString(), searchCarResults[1].Year);
+            Assert.AreEqual("Dodge", searchCarResults[1].Make);
+            Assert.AreEqual("Grand Caravan", searchCarResults[1].Model);
             Assert.AreEqual("White", searchCarResults[1].BodyColor);
-            Assert.AreEqual("White", searchCarResults[1].InteriorColor);
+            Assert.AreEqual("Tan", searchCarResults[1].InteriorColor);
             Assert.AreEqual("Automatic", searchCarResults[1].Transmission);
-            Assert.AreEqual("/Images/2017FordEscape.png", searchCarResults[1].IMGURL);
-            Assert.AreEqual("3ABC3ABC3ABC3ABC3", searchCarResults[1].VIN);
-            Assert.AreEqual("1200", searchCarResults[1].Mileage);
-            Assert.AreEqual(22669m, searchCarResults[1].SalePrice);
-            Assert.AreEqual(24500m, searchCarResults[1].MSRP);
+            Assert.AreEqual("/Images/2005DodgeGrandCaravan.jpg", searchCarResults[1].IMGURL);
+            Assert.AreEqual("4ABC4ABC4ABC4ABC4", searchCarResults[1].VIN);
+            Assert.AreEqual("111200", searchCarResults[1].Mileage);
+            Assert.AreEqual(4000m, searchCarResults[1].SalePrice);
+            Assert.AreEqual(5000m, searchCarResults[1].MSRP);
         }
 
         [Test]
@@ -744,20 +743,20 @@ namespace GuildCars.Tests
 
             List<SearchResultItem> searchCarResults = repo.SearchCars(searchParameters).ToList();
 
-            Assert.AreEqual(5, searchCarResults.Count);
+            Assert.AreEqual(2, searchCarResults.Count);
 
-            Assert.AreEqual(3, searchCarResults[1].CarId);
-            Assert.AreEqual(new DateTime(2017,1,1).Year.ToString(), searchCarResults[1].Year);
-            Assert.AreEqual("Ford", searchCarResults[1].Make);
-            Assert.AreEqual("Escape", searchCarResults[1].Model);
+            Assert.AreEqual(4, searchCarResults[1].CarId);
+            Assert.AreEqual(new DateTime(2005,1,1).Year.ToString(), searchCarResults[1].Year);
+            Assert.AreEqual("Dodge", searchCarResults[1].Make);
+            Assert.AreEqual("Grand Caravan", searchCarResults[1].Model);
             Assert.AreEqual("White", searchCarResults[1].BodyColor);
-            Assert.AreEqual("White", searchCarResults[1].InteriorColor);
+            Assert.AreEqual("Tan", searchCarResults[1].InteriorColor);
             Assert.AreEqual("Automatic", searchCarResults[1].Transmission);
-            Assert.AreEqual("/Images/2017FordEscape.png", searchCarResults[1].IMGURL);
-            Assert.AreEqual("3ABC3ABC3ABC3ABC3", searchCarResults[1].VIN);
-            Assert.AreEqual("1200", searchCarResults[1].Mileage);
-            Assert.AreEqual(22669m, searchCarResults[1].SalePrice);
-            Assert.AreEqual(24500m, searchCarResults[1].MSRP);
+            Assert.AreEqual("/Images/2005DodgeGrandCaravan.jpg", searchCarResults[1].IMGURL);
+            Assert.AreEqual("4ABC4ABC4ABC4ABC4", searchCarResults[1].VIN);
+            Assert.AreEqual("111200", searchCarResults[1].Mileage);
+            Assert.AreEqual(4000m, searchCarResults[1].SalePrice);
+            Assert.AreEqual(5000m, searchCarResults[1].MSRP);
         }
 
         [Test]
@@ -777,20 +776,19 @@ namespace GuildCars.Tests
 
             List<SearchResultItem> searchCarResults = repo.SearchCars(searchParameters).ToList();
 
-            Assert.AreEqual(5, searchCarResults.Count);
-
-            Assert.AreEqual(3, searchCarResults[1].CarId);
-            Assert.AreEqual(new DateTime(2017,1,1).Year.ToString(), searchCarResults[1].Year);
-            Assert.AreEqual("Ford", searchCarResults[1].Make);
-            Assert.AreEqual("Escape", searchCarResults[1].Model);
+            Assert.AreEqual(2, searchCarResults.Count);
+            Assert.AreEqual(4, searchCarResults[1].CarId);
+            Assert.AreEqual(new DateTime(2005,1,1).Year.ToString(), searchCarResults[1].Year);
+            Assert.AreEqual("Dodge", searchCarResults[1].Make);
+            Assert.AreEqual("Grand Caravan", searchCarResults[1].Model);
             Assert.AreEqual("White", searchCarResults[1].BodyColor);
-            Assert.AreEqual("White", searchCarResults[1].InteriorColor);
+            Assert.AreEqual("Tan", searchCarResults[1].InteriorColor);
             Assert.AreEqual("Automatic", searchCarResults[1].Transmission);
-            Assert.AreEqual("/Images/2017FordEscape.png", searchCarResults[1].IMGURL);
-            Assert.AreEqual("3ABC3ABC3ABC3ABC3", searchCarResults[1].VIN);
-            Assert.AreEqual("1200", searchCarResults[1].Mileage);
-            Assert.AreEqual(22669m, searchCarResults[1].SalePrice);
-            Assert.AreEqual(24500m, searchCarResults[1].MSRP);
+            Assert.AreEqual("/Images/2005DodgeGrandCaravan.jpg", searchCarResults[1].IMGURL);
+            Assert.AreEqual("4ABC4ABC4ABC4ABC4", searchCarResults[1].VIN);
+            Assert.AreEqual("111200", searchCarResults[1].Mileage);
+            Assert.AreEqual(4000m, searchCarResults[1].SalePrice);
+            Assert.AreEqual(5000m, searchCarResults[1].MSRP);
         }
 
         [Test]
@@ -901,20 +899,20 @@ namespace GuildCars.Tests
 
             List<SearchResultItem> searchCarResults = repo.SearchCars(searchParameters).ToList();
 
-            Assert.AreEqual(5, searchCarResults.Count);
+            Assert.AreEqual(2, searchCarResults.Count);
 
-            Assert.AreEqual(1, searchCarResults[1].CarId);
-            Assert.AreEqual(new DateTime(2017,1,1).Year.ToString(), searchCarResults[1].Year);
-            Assert.AreEqual("Toyota", searchCarResults[1].Make);
-            Assert.AreEqual("Tundra LX", searchCarResults[1].Model);
-            Assert.AreEqual("Black", searchCarResults[1].BodyColor);
-            Assert.AreEqual("Black", searchCarResults[1].InteriorColor);
-            Assert.AreEqual("Automatic", searchCarResults[1].Transmission);
-            Assert.AreEqual("/Images/2017ToyotaTundra1794.jpg", searchCarResults[1].IMGURL);
-            Assert.AreEqual("1ABC1ABC1ABC1ABC1", searchCarResults[1].VIN);
+            Assert.AreEqual(5, searchCarResults[1].CarId);
+            Assert.AreEqual(new DateTime(2020,1,1).Year.ToString(), searchCarResults[1].Year);
+            Assert.AreEqual("Mock", searchCarResults[1].Make);
+            Assert.AreEqual("Vehicle", searchCarResults[1].Model);
+            Assert.AreEqual("Silver", searchCarResults[1].BodyColor);
+            Assert.AreEqual("Gray", searchCarResults[1].InteriorColor);
+            Assert.AreEqual("Manual", searchCarResults[1].Transmission);
+            Assert.AreEqual("/Images/MockNewCarPhoto.png", searchCarResults[1].IMGURL);
+            Assert.AreEqual("5ABC5ABC5ABC5ABC5", searchCarResults[1].VIN);
             Assert.AreEqual("0", searchCarResults[1].Mileage);
-            Assert.AreEqual(50315m, searchCarResults[1].SalePrice);
-            Assert.AreEqual(51815m, searchCarResults[1].MSRP);
+            Assert.AreEqual(10000, searchCarResults[1].SalePrice);
+            Assert.AreEqual(10000, searchCarResults[1].MSRP);
         }
 
         [Test]
@@ -934,20 +932,20 @@ namespace GuildCars.Tests
 
             List<SearchResultItem> searchCarResults = repo.SearchCars(searchParameters).ToList();
 
-            Assert.AreEqual(5, searchCarResults.Count);
+            Assert.AreEqual(2, searchCarResults.Count);
 
-            Assert.AreEqual(3, searchCarResults[1].CarId);
-            Assert.AreEqual(new DateTime(2017,1,1).Year.ToString(), searchCarResults[1].Year);
-            Assert.AreEqual("Ford", searchCarResults[1].Make);
-            Assert.AreEqual("Escape", searchCarResults[1].Model);
+            Assert.AreEqual(4, searchCarResults[1].CarId);
+            Assert.AreEqual(new DateTime(2005,1,1).Year.ToString(), searchCarResults[1].Year);
+            Assert.AreEqual("Dodge", searchCarResults[1].Make);
+            Assert.AreEqual("Grand Caravan", searchCarResults[1].Model);
             Assert.AreEqual("White", searchCarResults[1].BodyColor);
-            Assert.AreEqual("White", searchCarResults[1].InteriorColor);
+            Assert.AreEqual("Tan", searchCarResults[1].InteriorColor);
             Assert.AreEqual("Automatic", searchCarResults[1].Transmission);
-            Assert.AreEqual("/Images/2017FordEscape.png", searchCarResults[1].IMGURL);
-            Assert.AreEqual("3ABC3ABC3ABC3ABC3", searchCarResults[1].VIN);
-            Assert.AreEqual("1200", searchCarResults[1].Mileage);
-            Assert.AreEqual(22669m, searchCarResults[1].SalePrice);
-            Assert.AreEqual(24500m, searchCarResults[1].MSRP);
+            Assert.AreEqual("/Images/2005DodgeGrandCaravan.jpg", searchCarResults[1].IMGURL);
+            Assert.AreEqual("4ABC4ABC4ABC4ABC4", searchCarResults[1].VIN);
+            Assert.AreEqual("111200", searchCarResults[1].Mileage);
+            Assert.AreEqual(4000m, searchCarResults[1].SalePrice);
+            Assert.AreEqual(5000m, searchCarResults[1].MSRP);
         }
     }
 }

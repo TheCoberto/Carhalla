@@ -83,7 +83,7 @@ BEGIN
 	BodyStyleId, TransmissionId, MakeId, ModelId, InteriorColorId, SalePrice, MSRP, IMGFilePath, VehicleDetails )
 	VALUES (1, CONVERT(DATE, '1/1/2021'), 'true', 'false', 'true', 4, 0, '1ABC1ABC1ABC1ABC1', 1, 1, 1, 1, 1, 1, 50315.00, 51815.00, '/Images/2017ToyotaTundra1794.jpg', 'Brand New and looks phenomenal.' ),
 	(2, CONVERT(DATE, '1/1/2020'), 'true', 'true', 'false', 3, 200, '2ABC2ABC2ABC2ABC2', 2, 2, 2, 2, 3, 3, 33000, 34150, '/Images/2018AcuraTLX.png', 'Very very very dependable.' ),
-	(3, CONVERT(DATE, '1/1/2019'), 'false', 'true', 'true', 3, 1200, '3ABC3ABC3ABC3ABC3', 5, 3, 1, 3, 2, 5, 22669, 24500, '/Images/2017FordEscape.png', 'Loaded!' ),
+	(3, CONVERT(DATE, '1/1/2019'), 'false', 'true', 'true', 3, 1200, '3ABC3ABC3ABC3ABC3', 5, 3, 1, 3, 2, 5, 22669, 24500, '/Images/2017FordEscape.png', 'Loaded! Used Price for Brand New Quality.' ),
 	(4, CONVERT(DATE, '1/1/2005'), 'false', 'false', 'false', 1, 111200, '4ABC4ABC4ABC4ABC4', 5, 4, 1, 4, 4, 4, 4000.00, 5000.00, '/Images/2005DodgeGrandCaravan.jpg', 'Dusty old van.' ),
 	(5, CONVERT(DATE, '1/1/2020'), 'true', 'true', 'false', 2, 0, '5ABC5ABC5ABC5ABC5', 2, 2, 2, 5, 5, 3, 10000, 10000, '/Images/MockNewCarPhoto.png', 'Used Car Mock Data 5' ),
 	(6, CONVERT(DATE, '1/1/2017'), 'false', 'true', 'false', 1, 0, '8ABC8ABC8ABC8ABC8', 2, 2, 2, 5, 5, 3, 40000, 40000, '/Images/MockUsedCarPhoto.png', 'New Car Mock Data 8' )
