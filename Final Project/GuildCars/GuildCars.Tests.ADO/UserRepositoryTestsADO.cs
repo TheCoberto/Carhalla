@@ -24,7 +24,7 @@ namespace GuildCars.Tests.UserRepositoryTests
                 {
                     var cmd = new SqlCommand
                     {
-                        CommandText = "GuildCarsDBReset",
+                        CommandText = "CarhallaDbReset",
                         CommandType = System.Data.CommandType.StoredProcedure,
 
                         Connection = dbConnection

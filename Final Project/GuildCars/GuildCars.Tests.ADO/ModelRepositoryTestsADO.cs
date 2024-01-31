@@ -24,7 +24,7 @@ namespace GuildCars.Tests.ModelRepositoryTests
                 {
                     var cmd = new SqlCommand
                     {
-                        CommandText = "GuildCarsDBReset",
+                        CommandText = "CarhallaDbReset",
                         CommandType = System.Data.CommandType.StoredProcedure,
 
                         Connection = dbConnection
@@ -63,7 +63,7 @@ namespace GuildCars.Tests.ModelRepositoryTests
 
             Assert.AreEqual(Models[2].ModelId, 3);
             Assert.AreEqual(Models[2].ModelName, "TLX");
-            Assert.AreEqual(Models[2].DateAdded, new DateTime(2017, 7, 2));
+            Assert.AreEqual(Models[2].DateAdded, new DateTime(2018, 7, 2));
         }
 
         [Test]
@@ -75,7 +75,7 @@ namespace GuildCars.Tests.ModelRepositoryTests
 
             Assert.AreEqual(Model.ModelId, 3);
             Assert.AreEqual(Model.ModelName, "TLX");
-            Assert.AreEqual(Model.DateAdded, new DateTime(2017, 7, 2));
+            Assert.AreEqual(Model.DateAdded, new DateTime(2018, 7, 2));
         }
 
         [Test]
@@ -88,7 +88,7 @@ namespace GuildCars.Tests.ModelRepositoryTests
 
             Assert.AreEqual(models[0].ModelId, 3);
             Assert.AreEqual(models[0].ModelName, "TLX");
-            Assert.AreEqual(models[0].DateAdded, new DateTime(2017, 7, 2));
+            Assert.AreEqual(models[0].DateAdded, new DateTime(2018, 7, 2));
         }
 
         [Test]

@@ -25,7 +25,7 @@ namespace GuildCars.Tests
                 {
                     var cmd = new SqlCommand
                     {
-                        CommandText = "GuildCarsDBReset",
+                        CommandText = "CarhallaDbReset",
                         CommandType = System.Data.CommandType.StoredProcedure,
 
                         Connection = dbConnection
@@ -64,7 +64,7 @@ namespace GuildCars.Tests
                 {
                     var cmd = new SqlCommand
                     {
-                        CommandText = "GuildCarsDBReset",
+                        CommandText = "CarhallaDbReset",
                         CommandType = System.Data.CommandType.StoredProcedure,
 
                         Connection = dbConnection
@@ -260,11 +260,11 @@ namespace GuildCars.Tests
 
             Assert.AreEqual("3ABC3ABC3ABC3ABC3", cars[1].VIN);
             Assert.AreEqual(3, cars[1].CarId);
-            Assert.AreEqual(new DateTime(2017, 1, 1), cars[1].ModelYear);
+            Assert.AreEqual(new DateTime(2019, 1, 1), cars[1].ModelYear);
             Assert.IsFalse(cars[1].IsNew);
             Assert.IsTrue(cars[1].IsSold);
             Assert.IsTrue(cars[1].IsFeatured);
-            Assert.AreEqual(1, cars[1].UnitsInStock);
+            Assert.AreEqual(3, cars[1].UnitsInStock);
             Assert.AreEqual("1200", cars[1].Mileage);
             Assert.AreEqual(5, cars[1].BodyColorId);
             Assert.AreEqual(3, cars[1].BodyStyleId);

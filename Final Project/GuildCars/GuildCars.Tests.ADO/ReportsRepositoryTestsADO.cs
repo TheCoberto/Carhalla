@@ -24,7 +24,7 @@ namespace GuildCars.Tests.ReportsRepositoryTests
                 {
                     var cmd = new SqlCommand
                     {
-                        CommandText = "GuildCarsDBReset",
+                        CommandText = "CarhallaDbReset",
                         CommandType = System.Data.CommandType.StoredProcedure,
 
                         Connection = dbConnection
@@ -63,7 +63,7 @@ namespace GuildCars.Tests.ReportsRepositoryTests
                 {
                     var cmd = new SqlCommand
                     {
-                        CommandText = "GuildCarsDBReset",
+                        CommandText = "CarhallaDbReset",
                         CommandType = System.Data.CommandType.StoredProcedure,
 
                         Connection = dbConnection
@@ -98,14 +98,14 @@ namespace GuildCars.Tests.ReportsRepositoryTests
 
             List<InventoryReportListingItem> inventoryReportsList = repo.GetInventory().ToList();
 
-            Assert.AreEqual(10, inventoryReportsList.Count);
+            Assert.AreEqual(6, inventoryReportsList.Count);
 
-            Assert.IsTrue(inventoryReportsList[8].IsNew);
-            Assert.AreEqual("Toyota", inventoryReportsList[8].Make);
-            Assert.AreEqual("Tundra LX", inventoryReportsList[8].Model);
-            Assert.AreEqual(3, inventoryReportsList[8].UnitsInStock);
-            Assert.AreEqual(155445m, inventoryReportsList[8].StockValue);
-            Assert.AreEqual(new DateTime(2017,1,1), inventoryReportsList[8].Year);
+            Assert.IsTrue(inventoryReportsList[5].IsNew);
+            Assert.AreEqual("Toyota", inventoryReportsList[5].Make);
+            Assert.AreEqual("Tundra LX", inventoryReportsList[5].Model);
+            Assert.AreEqual(4, inventoryReportsList[5].UnitsInStock);
+            Assert.AreEqual(207260m, inventoryReportsList[5].StockValue);
+            Assert.AreEqual(new DateTime(2021,1,1), inventoryReportsList[5].Year);
         }
 
         [Test]

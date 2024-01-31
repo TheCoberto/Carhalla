@@ -46,10 +46,10 @@ namespace GuildCars.Data.Repositories.Mock
 
         };
 
-        private static Make Mock = new Make
+        private static Make Subaru = new Make
         {
             MakeId = 5,
-            MakeName = "Mock",
+            MakeName = "Subaru",
             DateAdded = new DateTime(2009, 5, 1),
             AddedBy = "admin3@test.com"
 
@@ -63,7 +63,7 @@ namespace GuildCars.Data.Repositories.Mock
                 _makes.Add(Acura);
                 _makes.Add(Ford);
                 _makes.Add(Dodge);
-                _makes.Add(Mock);
+                _makes.Add(Subaru);
             }
         }
 
